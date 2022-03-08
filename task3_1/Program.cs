@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 //Console.WriteLine("Hello, World!");
-//Программа проверяет входящее пятизначное число на палиндром
+//Программа проверяет входящее пятизначное число на палиндром при помощи операций со строками
 int PromtInt(string message) //Функция ввода символов как целого числа. На будущее
 {
     Console.WriteLine(message);
