@@ -10,21 +10,19 @@ int PromtInt(string message) //Функция ввода символов как
     return int.Parse(Console.ReadLine());
 }
 
-int PromtInt(string message) //Функция ввода символов как целого числа с проверкой. При вызове нужна
+int PromtInt(string message) //Функция ввода символов как целого числа с проверкой. Можно указать
 // строка запроса, какие именно данные нужны. 
 {
     Console.WriteLine(message);
-    int temp = 0;
-    if (int.TryParse(Console.ReadLine(), out temp))
-        return temp;
+    if (int.TryParse(Console.ReadLine(), out int temp)) return temp;
     else
     {
         Console.WriteLine("Неверно введено число");
-        return -1;
+        return 0;
     }
 }
 
-string PromtStr(string message) //Функция ввода символов как строки символов. Запрашивает на входе
+string PromtStr(string message) //Функция ввода символов как строки символов. Можно указать
 // строку запроса, какие именно данные нужны
 {
     Console.WriteLine(message);
@@ -59,4 +57,14 @@ bool Palindrom(string message) //Функция определения, явля
         return true;
     else
         return false;
+}
+
+void FillPrintRandArray(int[] Arr, int scope) // Функция заполнения массива заданным диапазоном случайных 
+// значений натуральных чисел и вывода этого массива в консоль.
+{
+    for(int i = 0; i< Arr.Length; i++)
+    {
+        Arr[i] = Random.Shared.Next(0,scope + 1);
+        Console.Write(Arr[i] + " ");
+    }
 }

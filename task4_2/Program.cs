@@ -7,18 +7,16 @@ int PromtInt(string message) //Функция ввода символов как
 // строка запроса, какие именно данные нужны. 
 {
     Console.WriteLine(message);
-    int temp = 0;
-    if (int.TryParse(Console.ReadLine(), out temp))
-        return temp;
+    if (int.TryParse(Console.ReadLine(), out int temp)) return temp;
     else
     {
         Console.WriteLine("Неверно введено число");
-        return -1;
+        return 0;
     }
 }
 
 int inpVal = PromtInt("Введите натуральное число ");
-if(inpVal == -1) return; // Выход из программы, если ввод ошибочный
+if(inpVal == 0) return; // Выход из программы, если ввод ошибочный
 
 int res = 0;
 while(inpVal != 0)
