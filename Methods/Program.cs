@@ -10,7 +10,7 @@ int PromtInt(string message) //Функция ввода символов как
     return int.Parse(Console.ReadLine());
 }
 
-int PromtInt(string message) //Функция ввода символов как целого числа с проверкой. Можно указать
+int PromtIntCheck(string message) //Функция ввода символов как целого числа с проверкой. Можно указать
 // строка запроса, какие именно данные нужны. 
 {
     Console.WriteLine(message);
@@ -67,4 +67,35 @@ void FillPrintRandArray(int[] Arr, int scope) // Функция заполнен
         Arr[i] = Random.Shared.Next(0,scope + 1);
         Console.Write(Arr[i] + " ");
     }
+}
+
+int[] MultiArray(int[] arr) // Функция перемножения попарно элементов массива. Пары относительно центра массива
+{
+    int[] answer = new int[arr.Length/2 + arr.Length % 2];
+    for(int i = 0; i < arr.Length/2; i++)
+    {
+        answer[i] = arr[i]*arr[arr.Length -i-1];
+    }
+    if(arr.Length % 2 == 1) answer[answer.Length-1] = arr[arr.Length/2];
+    return answer;
+}
+
+int[] RandArray(int lenght, int max = -9, int min = 10) //Функция заполнения массива случайными целыми числами
+{
+    int[] answer = new int[lenght];
+    for (int i = 0; i < lenght; i++)
+    {
+        answer[i] = new Random().Next(-9, 10);
+    }
+    return answer;
+}
+
+void printArr(int[] Mas) // Функция вывода на консоль одномерного массива
+{
+    int count = Mas.Length;
+    for (int pos = 0; pos < count; pos++)
+    {
+        Console.Write(Mas[pos] + " ");
+    }
+    Console.WriteLine();
 }
