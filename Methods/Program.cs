@@ -109,3 +109,35 @@ int SummOddElemArray(int[] arr) // Функция суммирования вс�
     }
     return res;
 }
+
+double DispersionArr(double[] arr) //Функция нахождения разницы между мин.и макс. значенями массива
+{
+    double minVal=0;
+    double maxVal=0;
+    foreach (double i in arr)
+    {
+        if(minVal > i) minVal = i;
+        if(maxVal < i) maxVal = i;
+    }
+    return maxVal - minVal;
+}
+
+double[] RandArray(int lenght, double min = -100, double max = 100) //Функция заполнения массива случайными целыми числами
+{
+    double[] answer = new double[lenght];
+    for (int i = 0; i < lenght; i++)
+    {
+        answer[i] = new Random().NextDouble()*(max-min) + min;
+    }
+    return answer;
+}
+
+void printArr(double[] Mas) // Функция вывода на консоль одномерного массива чисел с плавающей запятой
+{
+    int count = Mas.Length;
+    for (int pos = 0; pos < count; pos++)
+    {
+        Console.Write($"{Mas[pos]:f2} ");
+    }
+    Console.WriteLine();
+}
