@@ -80,12 +80,12 @@ int[] MultiArray(int[] arr) // Функция перемножения попа�
     return answer;
 }
 
-int[] RandArray(int lenght, int max = -9, int min = 10) //Функция заполнения массива случайными целыми числами
+int[] RandArray(int lenght, int min = -9, int max = 10) //Функция заполнения массива случайными целыми числами
 {
     int[] answer = new int[lenght];
     for (int i = 0; i < lenght; i++)
     {
-        answer[i] = new Random().Next(-9, 10);
+        answer[i] = new Random().Next(min, max);
     }
     return answer;
 }
