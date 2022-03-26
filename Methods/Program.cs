@@ -99,3 +99,13 @@ void printArr(int[] Mas) // Функция вывода на консоль од
     }
     Console.WriteLine();
 }
+
+int SummOddElemArray(int[] arr) // Функция суммирования всех нечётных эл-тов массива.
+{
+    int res = 0;
+    foreach (int i in arr)
+    {
+        if(i % 2 != 0) res = res + i; 
+    }
+    return res;
+}
