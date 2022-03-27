@@ -141,3 +141,10 @@ void printArr(double[] Mas) // Функция вывода на консоль �
     }
     Console.WriteLine();
 }
+
+int SummOddPosArray(int[] arr) // Функция суммирования всех эл-тов массива на нечётных позициях.
+{
+    int res = 0;
+    for(int i = 1; i < arr.Length; i = i+2) res = res + arr[i];
+    return res;
+}
