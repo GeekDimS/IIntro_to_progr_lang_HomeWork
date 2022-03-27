@@ -5,15 +5,12 @@
 
 int[] Array = RandArray(PromtIntCheck("Введите размер массива"), -99, 100);
 printArr(Array);
-Console.WriteLine("Сумма нечётных элементов массива равно " + SummOddElemArray(Array));
+Console.WriteLine("Сумма нечётных элементов массива равно " + SummOddPosArray(Array));
 
-int SummOddElemArray(int[] arr) // Функция суммирования всех нечётных эл-тов массива.
+int SummOddPosArray(int[] arr) // Функция суммирования всех эл-тов массива на нечётных позициях.
 {
     int res = 0;
-    foreach (int i in arr)
-    {
-        if(i % 2 != 0) res = res + i; 
-    }
+    for(int i = 1; i < arr.Length; i = i+2) res = res + arr[i];
     return res;
 }
 
