@@ -5,12 +5,12 @@
 
 double[] Array = RandArray(PromtIntCheck("Введите размер массива"));
 printArr(Array);
-Console.WriteLine($"Сумма нечётных элементов массива равно {DispersionArr(Array):f2}");
+Console.WriteLine($"Разница между минимальным и максимальным значениями массива равна {DispersionArr(Array):f2}");
 
 double DispersionArr(double[] arr) //Функция нахождения разницы между мин.и макс. значенями массива
 {
-    double minVal=0;
-    double maxVal=0;
+    double minVal=arr[0];
+    double maxVal=arr[0];
     foreach (double i in arr)
     {
         if(minVal > i) minVal = i;

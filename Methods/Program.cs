@@ -112,8 +112,8 @@ int SummOddElemArray(int[] arr) // Функция суммирования вс�
 
 double DispersionArr(double[] arr) //Функция нахождения разницы между мин.и макс. значенями массива
 {
-    double minVal=0;
-    double maxVal=0;
+    double minVal=arr[0];
+    double maxVal=arr[0];
     foreach (double i in arr)
     {
         if(minVal > i) minVal = i;
