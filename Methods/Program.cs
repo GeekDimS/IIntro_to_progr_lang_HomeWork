@@ -148,3 +148,52 @@ int SummOddPosArray(int[] arr) // Функция суммирования все
     for(int i = 1; i < arr.Length; i = i+2) res = res + arr[i];
     return res;
 }
+
+int CountingNegNumbers(int[] arr) // Функция подсчёта количества отрицательных чисел в массиве
+{
+    int res = 0;
+    foreach (int i in arr)
+    {
+        if(i < 0) res = res + 1;
+    }
+    return res;
+}
+
+int[] PromtSeveralInt(string message) //Функция ввода нескольких целых чисел, разделённых пробелами или
+// запятыми. Запрашивает на входе строку запроса, какие именно данные нужны.
+{
+    Console.WriteLine(message);
+    string? str = Console.ReadLine(); // Проверяем наличие символов на вводе
+    if (str == null)
+        return new int[] { 0 }; // Если нет символов, то возврат нулевого массива
+
+    char[] separators = new char[] { ' ', '.', ',' }; // Задаём разделители символов (чисел)
+    string[] numbers = str.Split(separators, StringSplitOptions.RemoveEmptyEntries); //создаём массив строковых чисел
+    int[] res = new int[numbers.Length]; // Создаём массив для записи в него чисел
+    for (int i = 0; i < numbers.Length; i++) // Цикл преобразования массива строк в массив целых чисел
+    {
+        if (int.TryParse(numbers[i], out int temp))
+            res[i] = temp;
+        else
+        {
+            Console.WriteLine("Неверно введены числа"); // Если есть символы, отличные от цифр, то выводим сообщение об ошибке
+            return new int[] { 0 }; // и выходим из функции с нулевым массивом
+        }
+    }
+    return res;
+}
+
+double[] CalcXY(int[] arr) // Функция расчёта точки пересечения 2-х прямых на плоскости,
+// заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; элементы массива слева направо 
+// соответствуют перечислению их в уравнениях.
+{
+    double[] res = { 0, 0 };
+    if (arr[2] - arr[0] == 0) //Проверка равенства угла наклона прямых
+    {
+        Console.WriteLine("Прямые параллельны");
+        return res;
+    }
+    res[0] = (arr[1] - arr[3]) / (arr[2] - arr[0]); // Расчёт абсциссы
+    res[1] = (arr[1] * arr[2] - arr[3] * arr[0]) / (arr[2] - arr[0]); // Расчёт ординаты
+    return res;
+}
