@@ -5,14 +5,14 @@
 
 int[] Array = PromtSeveralInt("Введите несколько отрицательных и положительных чисел, разделённых пробелом или запятой");
 printArr(Array); // Можно закомментить - было для проверки и отладки
-Console.WriteLine("Отрицательных чисел найдено: " + CountingNegNumbers(Array));
+Console.WriteLine("Положительных чисел найдено: " + CountingNegNumbers(Array));
 
 int CountingNegNumbers(int[] arr) // Функция подсчёта количества отрицательных чисел в массиве
 {
     int res = 0;
     foreach (int i in arr)
     {
-        if(i < 0) res = res + 1;
+        if(i > 0) res = res + 1;
     }
     return res;
 }
