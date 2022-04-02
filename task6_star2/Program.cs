@@ -5,7 +5,7 @@
 int Decimal = PromtIntCheck("Введите целое число ");
 Console.WriteLine(decimalToBinary(Decimal));
 
-string decimalToBinary(int Val) // Функция перевода целого десятичного числа в строковый двоичный вид
+string decimalToBinary(int Val) // Рекурсивная функция перевода целого десятичного числа в строковый двоичный вид
 {
     int Rem = 0;
     string Res = "";

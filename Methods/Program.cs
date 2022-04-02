@@ -212,3 +212,17 @@ string Convert (int dec) // Преобразует целое число в ст
     while(div != 0);
     return res;
 }
+
+string decimalToBinary(int Val) // Рекурсивная функция перевода целого десятичного числа в строковый двоичный вид
+{
+    int Rem = 0;
+    string Res = "";
+
+    Rem = Val % 2;
+    Val = Val / 2;
+    Res = Res + Rem;
+
+    if (Val > 0)
+        Res = decimalToBinary(Val) + Res;
+    return Res;
+}
