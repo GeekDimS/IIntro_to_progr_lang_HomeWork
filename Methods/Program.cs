@@ -373,3 +373,25 @@ int[] SumInRowsArray(int[,] array) // Функция суммирования в
     }
     return res;
 }
+
+int[,] MultplyArrays(int[,] arrayA, int[,] arrayB) //Функция перемножения двух матриц (двумерных массивов) целых чисел
+{
+    if (arrayA.GetLength(1) != arrayB.GetLength(0))
+    {
+        Console.WriteLine("Размеры массивов не подходят для умножения.");
+        return new int[,]{{0}};
+    }
+
+    int[,] res = new int[arrayA.GetLength(0), arrayB.GetLength(1)];
+    for (int i = 0; i < res.GetLength(0); i++)
+    {
+        for (int j = 0; j < res.GetLength(1); j++)
+        {
+            for (int cA = 0; cA < arrayA.GetLength(1); cA++)
+            {
+                    res[i, j] = res[i, j] + arrayA[i, cA]*arrayB[cA, j];                
+            }
+        }
+    }
+    return res;
+}
