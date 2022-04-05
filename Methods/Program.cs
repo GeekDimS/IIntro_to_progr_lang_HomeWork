@@ -360,3 +360,16 @@ void SortShellArrayRows(int[,] array) // Функция сортировки О�
         }
     }
 }
+
+int[] SumInRowsArray(int[,] array) // Функция суммирования всех элементов каждой строки двумерноо массива и вывода результата в виде одномрного массива
+{
+    int[] res = new int[array.GetLength(0)];
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            res[i] = res[i] + array[i, j];
+        }
+    }
+    return res;
+}
