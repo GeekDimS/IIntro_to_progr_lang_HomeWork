@@ -19,15 +19,24 @@ void BinaryToDecimal(int[] data, int[] info, int begin = 0, int count = 0) // Ф
 {
     if (begin >= data.Length)
         return;
-        
+
     int c = info[count];
-    int temp = 0;
+    /*int temp = 0; //          Этот кусок кода заменён рекурсивной функцией AloneBinaryToDecimal.
     for (int i = 0; i < c; i++)
     {
         temp = temp + data[begin + c - i - 1] * Powering(2, i);
     }
-    info[count] = temp;
+    */
+    
+    info[count] = AloneBinaryToDecimal(data, c, begin);//temp;
     BinaryToDecimal(data, info, begin + c, count + 1);
+}
+
+int AloneBinaryToDecimal(int[] data, int c, int begin) // Рекурсивная функция перевода одного двоичного числа в десятичное
+{
+    if (c == 0)
+        return 0;
+    return data[begin] * Powering(2, c - 1) + AloneBinaryToDecimal(data, c - 1, begin + 1);
 }
 
 int Powering(int b, int a) // Ф-ция возведения в степень (рекурсия).
