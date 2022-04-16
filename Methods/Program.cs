@@ -432,3 +432,23 @@ void FillSpiralArray(int[,] array)//// Функция заполняет спи�
     }
     return;
 }
+
+bool CheckPrimeNumber(int N = 0, int count = 1) //Функция проверки числа на принадлежность к простому
+{
+    if(N <= 1) return false;
+    count = count + 1;
+    if (count == N) return true;        
+    if (N % count == 0) return false;
+    return CheckPrimeNumber(N, count);
+}
+
+bool CheckTwoPower(int N = 0) // Функция проверки числа, является-ли оно степенью числа два.
+{
+    if (N == 1)
+        return true;
+    if (N <= 0)
+        return false;
+    if (N % 2 != 0)
+        return false;
+    return CheckTwoPower(N / 2);
+}
